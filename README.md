@@ -2,7 +2,7 @@
 # CONFIG DATABASE:
 file "DBUtils.cs"
 # CALL MYSQL ĐỂ DÙNG:
-"``` MySqlConnection conn = DBUtils.GetDBConnection();```
+``` MySqlConnection conn = DBUtils.GetDBConnection();```
 
          conn.Open(); // MỞ
 
@@ -10,4 +10,3 @@ file "DBUtils.cs"
 
        conn.Close();//ĐÓNG
 
-"
