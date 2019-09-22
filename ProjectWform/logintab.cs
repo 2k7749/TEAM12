@@ -13,6 +13,7 @@ namespace ProjectWform
 {
     public partial class logintab : UserControl
     {
+        EnCryp to = new EnCryp();
         public logintab()
         {
             InitializeComponent();
@@ -20,8 +21,8 @@ namespace ProjectWform
        
         private void Btnlogin_Click(object sender, EventArgs e)
         {
-            string user = "hipcute"; //txtuser.Text;
-            string pass = "tdnlkd";//txtpwd.Text;
+            string user = "hipcute";//txtuser.Text;
+            string pass = "tdnlkd";//to.EnCrypt(txtpwd.Text);
             MySqlConnection conn = DBUtils.GetDBConnection();
             conn.Open();
             MySqlDataAdapter query = new MySqlDataAdapter("select count(*) from Users where username = '" +user+ "' and password = '" +pass+ "'", conn);

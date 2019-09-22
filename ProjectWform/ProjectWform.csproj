@@ -82,6 +82,7 @@
     </Compile>
     <Compile Include="DBMySQLUtils.cs" />
     <Compile Include="DBUtils.cs" />
+    <Compile Include="EnCryp.cs" />
     <Compile Include="forgetpwdtab.cs">
       <SubType>UserControl</SubType>
     </Compile>

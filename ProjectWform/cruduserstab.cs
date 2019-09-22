@@ -15,6 +15,7 @@ namespace ProjectWform
 {
     public partial class cruduserstab : UserControl
     {
+        EnCryp to = new EnCryp();
         int id = 0;
         public cruduserstab()
         {
@@ -61,12 +62,12 @@ namespace ProjectWform
                 pictureBox1.Image = Image.FromStream(ms);
                 txtstaffid.Text = dgvUsers.CurrentRow.Cells[1].Value.ToString();
                 txtsuser.Text = dgvUsers.CurrentRow.Cells[2].Value.ToString();
-                txtspwd.Text = dgvUsers.CurrentRow.Cells[3].Value.ToString();
-                txtlevels.Text = dgvUsers.CurrentRow.Cells[4].Value.ToString();
-                txtsex.Text = dgvUsers.CurrentRow.Cells[5].Value.ToString();
-                txtposition.Text = dgvUsers.CurrentRow.Cells[6].Value.ToString();
-                txtphone.Text = dgvUsers.CurrentRow.Cells[7].Value.ToString();
-                txtaddress.Text = dgvUsers.CurrentRow.Cells[8].Value.ToString();
+                txtspwd.Text = to.DeCrypt(dgvUsers.CurrentRow.Cells[3].Value.ToString());
+                txtlevels.Text = dgvUsers.CurrentRow.Cells[8].Value.ToString();
+                txtsex.Text = dgvUsers.CurrentRow.Cells[4].Value.ToString();
+                txtposition.Text = dgvUsers.CurrentRow.Cells[5].Value.ToString();
+                txtphone.Text = dgvUsers.CurrentRow.Cells[6].Value.ToString();
+                txtaddress.Text = dgvUsers.CurrentRow.Cells[7].Value.ToString();
                 id = Convert.ToInt32(dgvUsers.CurrentRow.Cells[0].Value.ToString());
                 btnDelete.Enabled = Enabled;
             }
@@ -131,7 +132,8 @@ namespace ProjectWform
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = dgvUsers.CurrentRow.Cells[0].Value.ToString();
             command.Parameters.Add("@staffid", MySqlDbType.VarChar).Value = txtstaffid.Text;
             command.Parameters.Add("@username", MySqlDbType.VarChar).Value = txtsuser.Text;
-            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = txtspwd.Text;
+            string getdatabox = dgvUsers.CurrentRow.Cells[3].Value.ToString();
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = to.EnCrypt(txtspwd.Text);
             command.Parameters.Add("@sex", MySqlDbType.Int32).Value = txtsex.Text;
             command.Parameters.Add("@position", MySqlDbType.Int32).Value = txtposition.Text;
             command.Parameters.Add("@staffphone", MySqlDbType.Int32).Value = txtphone.Text;
@@ -153,7 +155,8 @@ namespace ProjectWform
             command.Parameters.Add("@id", MySqlDbType.Int32).Value = dgvUsers.CurrentRow.Cells[0].Value.ToString();
             command.Parameters.Add("@staffid", MySqlDbType.VarChar).Value = txtstaffid.Text;
             command.Parameters.Add("@username", MySqlDbType.VarChar).Value = txtsuser.Text;
-            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = txtspwd.Text;
+            string getdatabox = dgvUsers.CurrentRow.Cells[3].Value.ToString();
+            command.Parameters.Add("@password", MySqlDbType.VarChar).Value = to.EnCrypt(txtspwd.Text);
             command.Parameters.Add("@sex", MySqlDbType.Int32).Value = txtsex.Text;
             command.Parameters.Add("@position", MySqlDbType.Int32).Value = txtposition.Text;
             command.Parameters.Add("@staffphone", MySqlDbType.Int32).Value = txtphone.Text;
