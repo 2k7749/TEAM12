@@ -57,6 +57,7 @@
             this.txtpwd.TabIndex = 5;
             this.txtpwd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtpwd.Enter += new System.EventHandler(this.Txtpwd_Enter);
+            this.txtpwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtpwd_KeyDown);
             this.txtpwd.Leave += new System.EventHandler(this.Txtpwd_Leave);
             // 
             // txtuser
@@ -77,6 +78,7 @@
             this.txtuser.Size = new System.Drawing.Size(440, 51);
             this.txtuser.TabIndex = 6;
             this.txtuser.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtuser.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Txtuser_KeyDown);
             // 
             // btnlogin
             // 

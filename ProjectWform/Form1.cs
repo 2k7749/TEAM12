@@ -37,10 +37,7 @@ namespace ProjectWform
                 return cp;
             }
         }
-        private void Label3_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+       
 
         private void PictureBox1_Click(object sender, EventArgs e)
         {
@@ -104,6 +101,16 @@ namespace ProjectWform
         private void Panel1_MouseUp(object sender, MouseEventArgs e)
         {
             mov = 0;
+        }
+
+        private void PictureBox4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PictureBox5_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

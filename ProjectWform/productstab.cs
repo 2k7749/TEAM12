@@ -26,7 +26,7 @@ namespace ProjectWform
         public void FillGridProducts(string SearchValue)
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
-            MySqlCommand gridfill = new MySqlCommand("SELECT * FROM Products WHERE CONCAT(pid,pname,typeid,brandid) LIKE '%" +SearchValue+ "%'", conn);
+            MySqlCommand gridfill = new MySqlCommand("SELECT * FROM Products WHERE CONCAT(pid,pname,typename,brandname) LIKE '%" +SearchValue+ "%'", conn);
             MySqlDataAdapter adapter = new MySqlDataAdapter(gridfill);
             DataTable table = new DataTable();
             adapter.Fill(table);
@@ -34,7 +34,7 @@ namespace ProjectWform
             dataGridView1.AllowUserToAddRows = false;
             dataGridView1.DataSource = table;
             DataGridViewImageColumn imgCol = new DataGridViewImageColumn();
-            imgCol = (DataGridViewImageColumn)dataGridView1.Columns[6];
+            imgCol = (DataGridViewImageColumn)dataGridView1.Columns[8];
             imgCol.ImageLayout = DataGridViewImageCellLayout.Stretch;
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.Columns[0].Visible = false;
@@ -52,7 +52,7 @@ namespace ProjectWform
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
             
-            Byte[] img = (Byte[])dataGridView1.CurrentRow.Cells[6].Value;
+            Byte[] img = (Byte[])dataGridView1.CurrentRow.Cells[8].Value;
             MemoryStream ms = new MemoryStream(img);
             pictureBox1.Image = Image.FromStream(ms);
             txtpid.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
@@ -60,6 +60,9 @@ namespace ProjectWform
             txttypeid.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
             txtbranddid.Text = dataGridView1.CurrentRow.Cells[4].Value.ToString();
             txtprice.Text = dataGridView1.CurrentRow.Cells[5].Value.ToString();
+            txtcost.Text = dataGridView1.CurrentRow.Cells[6].Value.ToString();
+            txtamouts.Text = dataGridView1.CurrentRow.Cells[7].Value.ToString();
+            txtdate.Text = dataGridView1.CurrentRow.Cells[9].Value.ToString();
             btndelete.Enabled = Enabled;
         }
 
@@ -70,14 +73,18 @@ namespace ProjectWform
             MemoryStream ms = new MemoryStream();
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
             byte[] img = ms.ToArray();
-            MySqlCommand command = new MySqlCommand("INSERT INTO Products (pid, pname, typeid, brandid, price, image) VALUES (@pid,@pname,@typeid,@brandid,@price,@image)", conn);
+            MySqlCommand command = new MySqlCommand("INSERT INTO Products (pid, pname, typename, brandname, price, cost, amouts, image, dateadd) VALUES (@pid, @pname, @typename, @brandname, @price, @cost, @amouts, @image, @dateadd)", conn);
             command.Parameters.Add("@pid", MySqlDbType.VarChar).Value = txtpid.Text;
             command.Parameters.Add("@pname", MySqlDbType.VarChar).Value = txtpname.Text;
-            command.Parameters.Add("@typeid", MySqlDbType.VarChar).Value = txttypeid.Text;
-            command.Parameters.Add("@brandid", MySqlDbType.VarChar).Value = txtbranddid.Text;
+            command.Parameters.Add("@typename", MySqlDbType.VarChar).Value = txttypeid.Text;
+            command.Parameters.Add("@brandname", MySqlDbType.VarChar).Value = txtbranddid.Text;
             command.Parameters.Add("@price", MySqlDbType.Int32).Value = txtprice.Text;
+            command.Parameters.Add("@cost", MySqlDbType.Int32).Value = txtcost.Text;
+            command.Parameters.Add("@amouts", MySqlDbType.Int32).Value = txtamouts.Text;
+            command.Parameters.Add("@dateadd", MySqlDbType.DateTime).Value = bunifuDatepicker1.Value;
             command.Parameters.Add("@image", MySqlDbType.Blob).Value = img;
             ExecMyQuery(command, "Inserted");
+            conn.Close();
         }
 
         public void ExecMyQuery(MySqlCommand mcomd, string myMsg) { 
@@ -103,15 +110,19 @@ namespace ProjectWform
             MemoryStream ms = new MemoryStream();
             pictureBox1.Image.Save(ms, pictureBox1.Image.RawFormat);
             byte[] img = ms.ToArray();
-            MySqlCommand command = new MySqlCommand("UPDATE Products SET pid=@pid, pname=@pname, typeid=@typeid, brandid=@brandid, price=@price, image=@image WHERE id=@id", conn);
+            MySqlCommand command = new MySqlCommand("UPDATE Products SET pid=@pid, pname=@pname, typename=@typename, brandname=@brandname, price=@price, cost = @cost, amouts = @amouts, dateadd = @dateadd, image=@image WHERE id=@id", conn);
             command.Parameters.Add("@id", MySqlDbType.VarChar).Value = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             command.Parameters.Add("@pid", MySqlDbType.VarChar).Value = txtpid.Text;
             command.Parameters.Add("@pname", MySqlDbType.VarChar).Value = txtpname.Text;
-            command.Parameters.Add("@typeid", MySqlDbType.VarChar).Value = txttypeid.Text;
-            command.Parameters.Add("@brandid", MySqlDbType.VarChar).Value = txtbranddid.Text;
+            command.Parameters.Add("@typename", MySqlDbType.VarChar).Value = txttypeid.Text;
+            command.Parameters.Add("@brandname", MySqlDbType.VarChar).Value = txtbranddid.Text;
             command.Parameters.Add("@price", MySqlDbType.Int32).Value = txtprice.Text;
+            command.Parameters.Add("@cost", MySqlDbType.Int32).Value = txtcost.Text;
+            command.Parameters.Add("@amouts", MySqlDbType.Int32).Value = txtamouts.Text;
+            command.Parameters.Add("@dateadd", MySqlDbType.DateTime).Value = bunifuDatepicker1.Value;
             command.Parameters.Add("@image", MySqlDbType.Blob).Value = img;
             ExecMyQuery(command, "Updated");
+            conn.Close();
         }
 
         private void Btndelete_Click(object sender, EventArgs e)
@@ -122,6 +133,7 @@ namespace ProjectWform
             command.Parameters.Add("@id", MySqlDbType.VarChar).Value = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             ExecMyQuery(command, "Deleted");
             Clearman();
+            conn.Close();
         }
         private void Txtkeyword_TextChanged(object sender, EventArgs e)
         {
@@ -130,6 +142,7 @@ namespace ProjectWform
         private void BunifuImageButton1_Click(object sender, EventArgs e)
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
+            conn.Open();
             MySqlCommand command = new MySqlCommand("SELECT * FROM Products WHERE pid = @pid", conn);
             command.Parameters.Add("@pid", MySqlDbType.VarChar).Value = txtpid.Text;
             MySqlDataAdapter adapter = new MySqlDataAdapter(command);
@@ -147,10 +160,14 @@ namespace ProjectWform
                 txttypeid.Text = table.Rows[0][3].ToString();
                 txtbranddid.Text = table.Rows[0][4].ToString();
                 txtprice.Text = table.Rows[0][5].ToString();
-                byte[] img = (byte[])table.Rows[0][6];
+                txtcost.Text = table.Rows[0][6].ToString();
+                txtamouts.Text = table.Rows[0][7].ToString();
+                txtdate.Text = table.Rows[0][9].ToString();
+                byte[] img = (byte[])table.Rows[0][8];
                 MemoryStream ms = new MemoryStream(img);
                 pictureBox1.Image = Image.FromStream(ms);
             }
+            conn.Close();
         }
 
         private void Btnclear_Click(object sender, EventArgs e)
@@ -164,6 +181,9 @@ namespace ProjectWform
             txttypeid.Text = "";
             txtbranddid.Text = "";
             txtprice.Text = "";
+            txtcost.Text = "";
+            txtamouts.Text = "";
+            txtdate.Text = "";
             pictureBox1.Image = null;   
             btndelete.Enabled = false;
         }

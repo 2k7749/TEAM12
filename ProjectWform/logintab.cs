@@ -57,5 +57,21 @@ namespace ProjectWform
                 txtpwd.isPassword = false;
             }
         }
+
+        private void Txtuser_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtpwd.Focus();
+            }
+        }
+
+        private void Txtpwd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtuser.Focus();
+            }
+        }
     }
 }

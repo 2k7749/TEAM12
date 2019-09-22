@@ -31,10 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.forgetpwdtab1 = new ProjectWform.forgetpwdtab();
-            this.ctvtab1 = new ProjectWform.ctvtab();
-            this.logintab1 = new ProjectWform.logintab();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -42,8 +38,15 @@
             this.btnctv = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.forgetpwdtab1 = new ProjectWform.forgetpwdtab();
+            this.ctvtab1 = new ProjectWform.ctvtab();
+            this.logintab1 = new ProjectWform.logintab();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,11 +56,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.pictureBox5);
+            this.panel1.Controls.Add(this.pictureBox4);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.forgetpwdtab1);
             this.panel1.Controls.Add(this.ctvtab1);
             this.panel1.Controls.Add(this.logintab1);
-            this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
@@ -80,55 +84,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 361);
             this.panel4.TabIndex = 8;
-            // 
-            // forgetpwdtab1
-            // 
-            this.forgetpwdtab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.forgetpwdtab1.BackColor = System.Drawing.Color.White;
-            this.forgetpwdtab1.Location = new System.Drawing.Point(587, 212);
-            this.forgetpwdtab1.Name = "forgetpwdtab1";
-            this.forgetpwdtab1.Size = new System.Drawing.Size(613, 361);
-            this.forgetpwdtab1.TabIndex = 7;
-            // 
-            // ctvtab1
-            // 
-            this.ctvtab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ctvtab1.BackColor = System.Drawing.Color.White;
-            this.ctvtab1.Location = new System.Drawing.Point(587, 212);
-            this.ctvtab1.Name = "ctvtab1";
-            this.ctvtab1.Size = new System.Drawing.Size(613, 361);
-            this.ctvtab1.TabIndex = 6;
-            // 
-            // logintab1
-            // 
-            this.logintab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.logintab1.BackColor = System.Drawing.Color.White;
-            this.logintab1.Location = new System.Drawing.Point(584, 212);
-            this.logintab1.Name = "logintab1";
-            this.logintab1.Size = new System.Drawing.Size(613, 361);
-            this.logintab1.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(1232, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(40, 38);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "X";
-            this.label3.Click += new System.EventHandler(this.Label3_Click);
             // 
             // label2
             // 
@@ -241,6 +196,63 @@
             this.panel2.Size = new System.Drawing.Size(267, 361);
             this.panel2.TabIndex = 0;
             // 
+            // forgetpwdtab1
+            // 
+            this.forgetpwdtab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.forgetpwdtab1.BackColor = System.Drawing.Color.White;
+            this.forgetpwdtab1.Location = new System.Drawing.Point(587, 212);
+            this.forgetpwdtab1.Name = "forgetpwdtab1";
+            this.forgetpwdtab1.Size = new System.Drawing.Size(613, 361);
+            this.forgetpwdtab1.TabIndex = 7;
+            // 
+            // ctvtab1
+            // 
+            this.ctvtab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ctvtab1.BackColor = System.Drawing.Color.White;
+            this.ctvtab1.Location = new System.Drawing.Point(587, 212);
+            this.ctvtab1.Name = "ctvtab1";
+            this.ctvtab1.Size = new System.Drawing.Size(613, 361);
+            this.ctvtab1.TabIndex = 6;
+            // 
+            // logintab1
+            // 
+            this.logintab1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.logintab1.BackColor = System.Drawing.Color.White;
+            this.logintab1.Location = new System.Drawing.Point(584, 212);
+            this.logintab1.Name = "logintab1";
+            this.logintab1.Size = new System.Drawing.Size(613, 361);
+            this.logintab1.TabIndex = 5;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
+            this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox5.Location = new System.Drawing.Point(1178, 10);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(42, 40);
+            this.pictureBox5.TabIndex = 14;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.PictureBox5_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox4.Location = new System.Drawing.Point(1232, 10);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(42, 40);
+            this.pictureBox4.TabIndex = 15;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.PictureBox4_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -253,6 +265,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -267,11 +281,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
         private logintab logintab1;
         private forgetpwdtab forgetpwdtab1;
         private ctvtab ctvtab1;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }
 

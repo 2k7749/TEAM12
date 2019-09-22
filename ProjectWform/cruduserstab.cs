@@ -117,6 +117,7 @@ namespace ProjectWform
                 connafterrcmd.ExecuteNonQuery();
                 Clear();
                 GridFill("");
+                conn.Close();
             }
         }
         private void Btnupdate_Click(object sender, EventArgs e)
@@ -138,6 +139,7 @@ namespace ProjectWform
             command.Parameters.Add("@level", MySqlDbType.Int32).Value = txtlevels.Text;
             command.Parameters.Add("@image", MySqlDbType.Blob).Value = img;
             ExecMyQuery(command, "Updated");
+            conn.Close();
         }
 
         private void BtnSave_Click_1(object sender, EventArgs e)
@@ -159,6 +161,7 @@ namespace ProjectWform
             command.Parameters.Add("@level", MySqlDbType.Int32).Value = txtlevels.Text;
             command.Parameters.Add("@image", MySqlDbType.Blob).Value = img;
             ExecMyQuery(command, "Inserted");
+            conn.Close();
         }
         public void ExecMyQuery(MySqlCommand mcomd, string myMsg)
         {

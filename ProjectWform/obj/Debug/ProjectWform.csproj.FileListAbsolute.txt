@@ -25,3 +25,5 @@ E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWfor
 E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.ctvtab.resources
 E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.forgetpwdtab.resources
 E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.cruduserstab.resources
+E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.warehousetab.resources
+E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.customerstab.resources
