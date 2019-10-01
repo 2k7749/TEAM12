@@ -27,3 +27,6 @@ E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWfor
 E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.cruduserstab.resources
 E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.warehousetab.resources
 E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.customerstab.resources
+E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.viewproductstab.resources
+E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.salelogtab.resources
+E:\ProjectLocalSave\ProjectWform\ProjectWform\ProjectWform\obj\Debug\ProjectWform.csprojAssemblyReference.cache

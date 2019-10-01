@@ -30,13 +30,23 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formpanel));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtsenduser = new System.Windows.Forms.TextBox();
+            this.btnbuylogs = new System.Windows.Forms.Button();
+            this.btnpos = new System.Windows.Forms.Button();
+            this.btnmcus = new System.Windows.Forms.Button();
+            this.btnvproduct = new System.Windows.Forms.Button();
             this.levelvisible = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button11 = new System.Windows.Forms.Button();
             this.showusername = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.sslide2 = new System.Windows.Forms.Panel();
             this.sslide1 = new System.Windows.Forms.Panel();
+            this.btnmsalelog = new System.Windows.Forms.Button();
+            this.btnusersmana = new System.Windows.Forms.Button();
+            this.btnproducts = new System.Windows.Forms.Button();
+            this.btndashboard = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -45,31 +55,25 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnbuylogs = new System.Windows.Forms.Button();
-            this.btnpos = new System.Windows.Forms.Button();
-            this.btnmcus = new System.Windows.Forms.Button();
-            this.btnvproduct = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnmsalelog = new System.Windows.Forms.Button();
-            this.btnusersmana = new System.Windows.Forms.Button();
-            this.btnproducts = new System.Windows.Forms.Button();
-            this.btndashboard = new System.Windows.Forms.Button();
+            this.salelogtab1 = new ProjectWform.salelogtab();
+            this.viewproductstab1 = new ProjectWform.viewproductstab();
+            this.customerstab1 = new ProjectWform.customerstab();
             this.btnchooseimage = new ProjectWform.cruduserstab();
             this.dashboardtab1 = new ProjectWform.dashboardtab();
             this.productstab1 = new ProjectWform.productstab();
-            this.customerstab1 = new ProjectWform.customerstab();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(39)))), ((int)(((byte)(40)))));
+            this.panel1.Controls.Add(this.txtsenduser);
             this.panel1.Controls.Add(this.btnbuylogs);
             this.panel1.Controls.Add(this.btnpos);
             this.panel1.Controls.Add(this.btnmcus);
@@ -92,6 +96,81 @@
             this.panel1.Size = new System.Drawing.Size(264, 768);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.Panel1_Paint);
+            // 
+            // txtsenduser
+            // 
+            this.txtsenduser.Location = new System.Drawing.Point(12, 0);
+            this.txtsenduser.Name = "txtsenduser";
+            this.txtsenduser.Size = new System.Drawing.Size(10, 22);
+            this.txtsenduser.TabIndex = 17;
+            this.txtsenduser.TextChanged += new System.EventHandler(this.Txtsenduser_TextChanged);
+            // 
+            // btnbuylogs
+            // 
+            this.btnbuylogs.FlatAppearance.BorderSize = 0;
+            this.btnbuylogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnbuylogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnbuylogs.ForeColor = System.Drawing.Color.White;
+            this.btnbuylogs.Image = ((System.Drawing.Image)(resources.GetObject("btnbuylogs.Image")));
+            this.btnbuylogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnbuylogs.Location = new System.Drawing.Point(16, 348);
+            this.btnbuylogs.Name = "btnbuylogs";
+            this.btnbuylogs.Size = new System.Drawing.Size(232, 53);
+            this.btnbuylogs.TabIndex = 16;
+            this.btnbuylogs.Text = "         Buy Logs";
+            this.btnbuylogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnbuylogs.UseVisualStyleBackColor = true;
+            this.btnbuylogs.Click += new System.EventHandler(this.Btnbuylogs_Click);
+            // 
+            // btnpos
+            // 
+            this.btnpos.FlatAppearance.BorderSize = 0;
+            this.btnpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnpos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnpos.ForeColor = System.Drawing.Color.White;
+            this.btnpos.Image = ((System.Drawing.Image)(resources.GetObject("btnpos.Image")));
+            this.btnpos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnpos.Location = new System.Drawing.Point(16, 407);
+            this.btnpos.Name = "btnpos";
+            this.btnpos.Size = new System.Drawing.Size(232, 53);
+            this.btnpos.TabIndex = 15;
+            this.btnpos.Text = "          POS";
+            this.btnpos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnpos.UseVisualStyleBackColor = true;
+            // 
+            // btnmcus
+            // 
+            this.btnmcus.FlatAppearance.BorderSize = 0;
+            this.btnmcus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmcus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmcus.ForeColor = System.Drawing.Color.White;
+            this.btnmcus.Image = ((System.Drawing.Image)(resources.GetObject("btnmcus.Image")));
+            this.btnmcus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmcus.Location = new System.Drawing.Point(16, 466);
+            this.btnmcus.Name = "btnmcus";
+            this.btnmcus.Size = new System.Drawing.Size(232, 53);
+            this.btnmcus.TabIndex = 14;
+            this.btnmcus.Text = "           M-Customers";
+            this.btnmcus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnmcus.UseVisualStyleBackColor = true;
+            this.btnmcus.Click += new System.EventHandler(this.Btnmcus_Click);
+            // 
+            // btnvproduct
+            // 
+            this.btnvproduct.FlatAppearance.BorderSize = 0;
+            this.btnvproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnvproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnvproduct.ForeColor = System.Drawing.Color.White;
+            this.btnvproduct.Image = ((System.Drawing.Image)(resources.GetObject("btnvproduct.Image")));
+            this.btnvproduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnvproduct.Location = new System.Drawing.Point(16, 289);
+            this.btnvproduct.Name = "btnvproduct";
+            this.btnvproduct.Size = new System.Drawing.Size(232, 53);
+            this.btnvproduct.TabIndex = 13;
+            this.btnvproduct.Text = "          View Products";
+            this.btnvproduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnvproduct.UseVisualStyleBackColor = true;
+            this.btnvproduct.Click += new System.EventHandler(this.Btnvproduct_Click);
             // 
             // levelvisible
             // 
@@ -141,6 +220,16 @@
             this.showusername.TabIndex = 5;
             this.showusername.Text = "Username";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(61, 26);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(141, 130);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
@@ -164,6 +253,73 @@
             this.sslide1.Name = "sslide1";
             this.sslide1.Size = new System.Drawing.Size(10, 53);
             this.sslide1.TabIndex = 3;
+            // 
+            // btnmsalelog
+            // 
+            this.btnmsalelog.FlatAppearance.BorderSize = 0;
+            this.btnmsalelog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmsalelog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmsalelog.ForeColor = System.Drawing.Color.White;
+            this.btnmsalelog.Image = ((System.Drawing.Image)(resources.GetObject("btnmsalelog.Image")));
+            this.btnmsalelog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmsalelog.Location = new System.Drawing.Point(16, 643);
+            this.btnmsalelog.Name = "btnmsalelog";
+            this.btnmsalelog.Size = new System.Drawing.Size(232, 53);
+            this.btnmsalelog.TabIndex = 3;
+            this.btnmsalelog.Text = "          M-SaleLog";
+            this.btnmsalelog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnmsalelog.UseVisualStyleBackColor = true;
+            // 
+            // btnusersmana
+            // 
+            this.btnusersmana.FlatAppearance.BorderSize = 0;
+            this.btnusersmana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnusersmana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnusersmana.ForeColor = System.Drawing.Color.White;
+            this.btnusersmana.Image = ((System.Drawing.Image)(resources.GetObject("btnusersmana.Image")));
+            this.btnusersmana.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnusersmana.Location = new System.Drawing.Point(16, 584);
+            this.btnusersmana.Name = "btnusersmana";
+            this.btnusersmana.Size = new System.Drawing.Size(232, 53);
+            this.btnusersmana.TabIndex = 2;
+            this.btnusersmana.Text = "           M-Users";
+            this.btnusersmana.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnusersmana.UseVisualStyleBackColor = true;
+            this.btnusersmana.Click += new System.EventHandler(this.Btnusersmana_Click);
+            // 
+            // btnproducts
+            // 
+            this.btnproducts.FlatAppearance.BorderSize = 0;
+            this.btnproducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnproducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnproducts.ForeColor = System.Drawing.Color.White;
+            this.btnproducts.Image = ((System.Drawing.Image)(resources.GetObject("btnproducts.Image")));
+            this.btnproducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnproducts.Location = new System.Drawing.Point(16, 525);
+            this.btnproducts.Name = "btnproducts";
+            this.btnproducts.Size = new System.Drawing.Size(232, 53);
+            this.btnproducts.TabIndex = 1;
+            this.btnproducts.Text = "          M-Products";
+            this.btnproducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnproducts.UseVisualStyleBackColor = true;
+            this.btnproducts.Click += new System.EventHandler(this.Btnproducts_Click);
+            // 
+            // btndashboard
+            // 
+            this.btndashboard.FlatAppearance.BorderSize = 0;
+            this.btndashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btndashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndashboard.ForeColor = System.Drawing.Color.White;
+            this.btndashboard.Image = ((System.Drawing.Image)(resources.GetObject("btndashboard.Image")));
+            this.btndashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btndashboard.Location = new System.Drawing.Point(16, 230);
+            this.btndashboard.Name = "btndashboard";
+            this.btndashboard.Size = new System.Drawing.Size(232, 53);
+            this.btndashboard.TabIndex = 0;
+            this.btndashboard.Text = "           Dashboard";
+            this.btndashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btndashboard.UseVisualStyleBackColor = true;
+            this.btndashboard.Click += new System.EventHandler(this.Button1_Click);
             // 
             // panel2
             // 
@@ -262,147 +418,29 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Guitar Dashboard Project";
             // 
-            // btnbuylogs
+            // salelogtab1
             // 
-            this.btnbuylogs.FlatAppearance.BorderSize = 0;
-            this.btnbuylogs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnbuylogs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnbuylogs.ForeColor = System.Drawing.Color.White;
-            this.btnbuylogs.Image = ((System.Drawing.Image)(resources.GetObject("btnbuylogs.Image")));
-            this.btnbuylogs.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnbuylogs.Location = new System.Drawing.Point(16, 348);
-            this.btnbuylogs.Name = "btnbuylogs";
-            this.btnbuylogs.Size = new System.Drawing.Size(232, 53);
-            this.btnbuylogs.TabIndex = 16;
-            this.btnbuylogs.Text = "         Buy Logs";
-            this.btnbuylogs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnbuylogs.UseVisualStyleBackColor = true;
+            this.salelogtab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.salelogtab1.Location = new System.Drawing.Point(264, 183);
+            this.salelogtab1.Name = "salelogtab1";
+            this.salelogtab1.Size = new System.Drawing.Size(1016, 585);
+            this.salelogtab1.TabIndex = 20;
             // 
-            // btnpos
+            // viewproductstab1
             // 
-            this.btnpos.FlatAppearance.BorderSize = 0;
-            this.btnpos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnpos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnpos.ForeColor = System.Drawing.Color.White;
-            this.btnpos.Image = ((System.Drawing.Image)(resources.GetObject("btnpos.Image")));
-            this.btnpos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnpos.Location = new System.Drawing.Point(16, 407);
-            this.btnpos.Name = "btnpos";
-            this.btnpos.Size = new System.Drawing.Size(232, 53);
-            this.btnpos.TabIndex = 15;
-            this.btnpos.Text = "          POS";
-            this.btnpos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnpos.UseVisualStyleBackColor = true;
+            this.viewproductstab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.viewproductstab1.Location = new System.Drawing.Point(264, 183);
+            this.viewproductstab1.Name = "viewproductstab1";
+            this.viewproductstab1.Size = new System.Drawing.Size(1016, 585);
+            this.viewproductstab1.TabIndex = 19;
             // 
-            // btnmcus
+            // customerstab1
             // 
-            this.btnmcus.FlatAppearance.BorderSize = 0;
-            this.btnmcus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmcus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmcus.ForeColor = System.Drawing.Color.White;
-            this.btnmcus.Image = ((System.Drawing.Image)(resources.GetObject("btnmcus.Image")));
-            this.btnmcus.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmcus.Location = new System.Drawing.Point(16, 466);
-            this.btnmcus.Name = "btnmcus";
-            this.btnmcus.Size = new System.Drawing.Size(232, 53);
-            this.btnmcus.TabIndex = 14;
-            this.btnmcus.Text = "           M-Customers";
-            this.btnmcus.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnmcus.UseVisualStyleBackColor = true;
-            this.btnmcus.Click += new System.EventHandler(this.Btnmcus_Click);
-            // 
-            // btnvproduct
-            // 
-            this.btnvproduct.FlatAppearance.BorderSize = 0;
-            this.btnvproduct.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnvproduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnvproduct.ForeColor = System.Drawing.Color.White;
-            this.btnvproduct.Image = ((System.Drawing.Image)(resources.GetObject("btnvproduct.Image")));
-            this.btnvproduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnvproduct.Location = new System.Drawing.Point(16, 289);
-            this.btnvproduct.Name = "btnvproduct";
-            this.btnvproduct.Size = new System.Drawing.Size(232, 53);
-            this.btnvproduct.TabIndex = 13;
-            this.btnvproduct.Text = "          View Products";
-            this.btnvproduct.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnvproduct.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(61, 26);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(141, 130);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnmsalelog
-            // 
-            this.btnmsalelog.FlatAppearance.BorderSize = 0;
-            this.btnmsalelog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnmsalelog.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnmsalelog.ForeColor = System.Drawing.Color.White;
-            this.btnmsalelog.Image = ((System.Drawing.Image)(resources.GetObject("btnmsalelog.Image")));
-            this.btnmsalelog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnmsalelog.Location = new System.Drawing.Point(16, 643);
-            this.btnmsalelog.Name = "btnmsalelog";
-            this.btnmsalelog.Size = new System.Drawing.Size(232, 53);
-            this.btnmsalelog.TabIndex = 3;
-            this.btnmsalelog.Text = "          M-SaleLog";
-            this.btnmsalelog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnmsalelog.UseVisualStyleBackColor = true;
-            // 
-            // btnusersmana
-            // 
-            this.btnusersmana.FlatAppearance.BorderSize = 0;
-            this.btnusersmana.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnusersmana.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnusersmana.ForeColor = System.Drawing.Color.White;
-            this.btnusersmana.Image = ((System.Drawing.Image)(resources.GetObject("btnusersmana.Image")));
-            this.btnusersmana.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnusersmana.Location = new System.Drawing.Point(16, 584);
-            this.btnusersmana.Name = "btnusersmana";
-            this.btnusersmana.Size = new System.Drawing.Size(232, 53);
-            this.btnusersmana.TabIndex = 2;
-            this.btnusersmana.Text = "           M-Users";
-            this.btnusersmana.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnusersmana.UseVisualStyleBackColor = true;
-            this.btnusersmana.Click += new System.EventHandler(this.Btnusersmana_Click);
-            // 
-            // btnproducts
-            // 
-            this.btnproducts.FlatAppearance.BorderSize = 0;
-            this.btnproducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnproducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnproducts.ForeColor = System.Drawing.Color.White;
-            this.btnproducts.Image = ((System.Drawing.Image)(resources.GetObject("btnproducts.Image")));
-            this.btnproducts.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnproducts.Location = new System.Drawing.Point(16, 525);
-            this.btnproducts.Name = "btnproducts";
-            this.btnproducts.Size = new System.Drawing.Size(232, 53);
-            this.btnproducts.TabIndex = 1;
-            this.btnproducts.Text = "          M-Products";
-            this.btnproducts.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnproducts.UseVisualStyleBackColor = true;
-            this.btnproducts.Click += new System.EventHandler(this.Btnproducts_Click);
-            // 
-            // btndashboard
-            // 
-            this.btndashboard.FlatAppearance.BorderSize = 0;
-            this.btndashboard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btndashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndashboard.ForeColor = System.Drawing.Color.White;
-            this.btndashboard.Image = ((System.Drawing.Image)(resources.GetObject("btndashboard.Image")));
-            this.btndashboard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btndashboard.Location = new System.Drawing.Point(16, 230);
-            this.btndashboard.Name = "btndashboard";
-            this.btndashboard.Size = new System.Drawing.Size(232, 53);
-            this.btndashboard.TabIndex = 0;
-            this.btndashboard.Text = "           Dashboard";
-            this.btndashboard.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btndashboard.UseVisualStyleBackColor = true;
-            this.btndashboard.Click += new System.EventHandler(this.Button1_Click);
+            this.customerstab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.customerstab1.Location = new System.Drawing.Point(264, 183);
+            this.customerstab1.Name = "customerstab1";
+            this.customerstab1.Size = new System.Drawing.Size(1016, 585);
+            this.customerstab1.TabIndex = 18;
             // 
             // btnchooseimage
             // 
@@ -428,19 +466,13 @@
             this.productstab1.Size = new System.Drawing.Size(1016, 577);
             this.productstab1.TabIndex = 15;
             // 
-            // customerstab1
-            // 
-            this.customerstab1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.customerstab1.Location = new System.Drawing.Point(264, 183);
-            this.customerstab1.Name = "customerstab1";
-            this.customerstab1.Size = new System.Drawing.Size(1016, 585);
-            this.customerstab1.TabIndex = 18;
-            // 
             // formpanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1280, 768);
+            this.Controls.Add(this.salelogtab1);
+            this.Controls.Add(this.viewproductstab1);
             this.Controls.Add(this.customerstab1);
             this.Controls.Add(this.btnchooseimage);
             this.Controls.Add(this.dashboardtab1);
@@ -454,13 +486,13 @@
             this.Text = "formpanel";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -496,5 +528,8 @@
         private System.Windows.Forms.Button btnvproduct;
         private System.Windows.Forms.Button btnbuylogs;
         private customerstab customerstab1;
+        private viewproductstab viewproductstab1;
+        private salelogtab salelogtab1;
+        private System.Windows.Forms.TextBox txtsenduser;
     }
 }

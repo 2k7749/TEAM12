@@ -115,6 +115,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="salelogtab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="salelogtab.Designer.cs">
+      <DependentUpon>salelogtab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="viewproductstab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="viewproductstab.Designer.cs">
+      <DependentUpon>viewproductstab.cs</DependentUpon>
+    </Compile>
     <Compile Include="warehousetab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,6 +170,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="salelogtab.resx">
+      <DependentUpon>salelogtab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="viewproductstab.resx">
+      <DependentUpon>viewproductstab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="warehousetab.resx">
       <DependentUpon>warehousetab.cs</DependentUpon>
     </EmbeddedResource>

@@ -24,6 +24,8 @@ namespace ProjectWform
             sslide2.Height = btndashboard.Height;
             sslide2.Top = btndashboard.Top;
             showusername.Text = "Hi, " + gettinguser;
+            txtsenduser.Text = gettinguser;
+            txtsenduser.Visible = false;
             dashboardtab1.BringToFront();
             checkaccess(gettinguser);
             levelvisible.Visible = false;
@@ -65,7 +67,12 @@ namespace ProjectWform
 
             }
         }
-      
+       
+
+        private void Userbox_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
         void checkaccess(string userhere)
         {
             MySqlConnection conn = DBUtils.GetDBConnection();
@@ -102,7 +109,6 @@ namespace ProjectWform
                 label3.Text = typeaccount;
                 label3.ForeColor = Color.Crimson;
             }
-
             conn.Close();
         }
         private void Formpanel_Load(object sender, EventArgs e)
@@ -192,6 +198,33 @@ namespace ProjectWform
             sslide2.Height = btnmcus.Height;
             sslide2.Top = btnmcus.Top;
             customerstab1.BringToFront();
+        }
+
+        private void Btnvproduct_Click(object sender, EventArgs e)
+        {
+            sslide1.Height = btnvproduct.Height;
+            sslide1.Top = btnvproduct.Top;
+            sslide2.Height = btnvproduct.Height;
+            sslide2.Top = btnvproduct.Top;
+            viewproductstab1.BringToFront();
+        }
+
+        private void Btnbuylogs_Click(object sender, EventArgs e)
+        {
+            sslide1.Height = btnbuylogs.Height;
+            sslide1.Top = btnbuylogs.Top;
+            sslide2.Height = btnbuylogs.Height;
+            sslide2.Top = btnbuylogs.Top;
+            salelogtab1.BringToFront();
+        }
+        public string ID
+        {
+            get { return txtsenduser.Text; }
+        }
+
+        private void Txtsenduser_TextChanged(object sender, EventArgs e)
+        {
+            salelogtab1.ID = ID;
         }
     }
 }

@@ -105,7 +105,7 @@ namespace ProjectWform
 
         private void PictureBox4_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void PictureBox5_Click(object sender, EventArgs e)
